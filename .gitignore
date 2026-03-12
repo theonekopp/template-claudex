@@ -1,0 +1,27 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Claude Code local config
+.claude/
+
+# Workspace — agent scratch space, never committed
+/workspace/
+
+# Web layer output contents (gitkeep files are committed; actual outputs are not)
+/web/public/*/
+/web/private/*/
+!/web/public/.gitkeep
+!/web/private/.gitkeep
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS artifacts
+.DS_Store
+Thumbs.db

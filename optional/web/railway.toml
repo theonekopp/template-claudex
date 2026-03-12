@@ -1,0 +1,12 @@
+# NOTE: railway.toml must live at the REPO ROOT to be picked up by Railway.
+# When you're ready to deploy:
+#   1. Move optional/web/ to web/ at your repo root.
+#   2. Move this railway.toml to your repo root.
+#   3. Move optional/web/package.json to your repo root.
+#   4. Connect your GitHub repo to Railway and deploy.
+
+[build]
+buildCommand = "npm install"
+
+[deploy]
+startCommand = "node web/server.js"
