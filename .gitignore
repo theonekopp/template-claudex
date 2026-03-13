@@ -1,4 +1,5 @@
-# Environment files
+# Secrets — live in ../secrets/assistant.env (outside this repo entirely)
+# These entries are a safety net in case a .env file is ever created inside the repo
 .env
 .env.*
 !.env.example

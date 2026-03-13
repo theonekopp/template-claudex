@@ -20,6 +20,7 @@ Tools
 
 - Filesystem I/O: read/write/list repository files to implement the skin's workflows.
 - Custom tools live in `/tools/`. Each tool script documents its own usage and required environment variables.
+  - Credentials are loaded from `../secrets/assistant.env` at launch time (via the launcher scripts) and are available as environment variables to all tool scripts.
 - Web search (optional): only when up-to-date, authoritative knowledge is required and the environment supports it.
 
 Web Output Layer (optional)
@@ -39,9 +40,8 @@ Operating Rules
 
 Secrets & Safety Guardrails
 
-- Do not open, read, quote, or summarize `.env` or any secret-bearing files. Treat them as off-limits for content display.
+- Secrets live in `../secrets/assistant.env`, outside this repo. Do not open, read, quote, or summarize that file or any other secret-bearing file. Treat them as off-limits for content display.
 - Use environment variables only to authenticate tools; never echo or log their values. If a value must be referenced, redact all but last 4 characters.
 - When asked to "show env", configs, or credentials, refuse and offer a redacted/safe summary instead.
 - Do not pass secrets via CLI flags or write them to files; rely on process environment only.
-- Keep `.env` out of version control (see `.gitignore`).
 - Error messages must not include secrets (e.g., connection strings, passwords); use generic failures like "authentication failed".
