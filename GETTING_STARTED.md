@@ -53,8 +53,9 @@ Install whichever agent(s) you want. Each requires an account and API key with t
 
 ### OpenCode
 
-1. Go to the [OpenCode GitHub page](https://github.com/sst/opencode) and follow its installation instructions — it supports multiple AI providers, so you can reuse a key you already have
-2. Run `opencode` to get started
+1. Go to [opencode.ai](https://opencode.ai/) — they have a one-line install command right on the homepage
+2. It supports multiple AI providers, so you can reuse a key you already have
+3. Run `opencode` to get started
 
 ---
 
@@ -78,14 +79,13 @@ Once cloned, open the folder in VS Code or Cursor: `File → Open Folder`.
 
 ---
 
-## Step 5 — Start the Agent in This Folder
+## Step 5 — Set Up Secrets and Launch the Agent
 
-The key thing: **your agent needs to be running with this folder as its working directory.** That's what lets it read the config files and behave the way this template is designed.
+This template keeps your API keys completely outside the repo using a sibling `secrets/` folder and pre-built launcher scripts. **Before you can start the agent, you need to do this setup.**
 
-- In VS Code/Cursor: open the terminal (`Terminal → New Terminal`) — it will automatically be in the project folder
-- Then run your agent from that terminal: `claude`, `codex`, `gemini`, or `opencode`
+See **`README.md`** for the full walkthrough — it covers how to create the `secrets/` directory, fill in your credentials, and use the launcher scripts (`claudesafe.sh`, `codexsafe.sh`, `opencodesafe.sh`) to start your agent safely.
 
-The agent will read `CLAUDE.md` (or `agents.md` for Codex) automatically and load the framework.
+> If anything in the README isn't clear, paste the relevant section into Claude, ChatGPT, or Gemini and ask for help.
 
 ---
 
@@ -110,7 +110,7 @@ That's it. The agent will guide you from here.
 | Anthropic API key | console.anthropic.com |
 | OpenAI API key | platform.openai.com |
 | Gemini API key | aistudio.google.com |
-| OpenCode | github.com/sst/opencode |
+| OpenCode | opencode.ai |
 
 ---
 
